@@ -1,18 +1,21 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
+
 <head>
   <title>Baggage Weight Checker</title>
 </head>
+
 <body>
   <h1>Exercise 1:</h1>
   <label for="weightInput">Enter baggage weight (kg):</label>
-  <input  type="number" id="weightInput" placeholder="e.g. 12.5">
+  <input type="number" id="weightInput" placeholder="e.g. 12.5">
   <button onclick="checkBaggage()">Check Weight</button>
-  
+
   <h1>Exercise 2:</h1>
   <p>Create a page with a button</p>
   <p>When the user clicks, </p>
-  <p>If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.</p>
+  <p>If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these
+    multiples is 23.</p>
   <p>Find the sum of all the multiples of 3 or 5 below 1000 and alert the user to the correct answer.</p>
   <p>The prompt: <button onclick="doIt()">Press me!</button></p>
 
@@ -20,8 +23,8 @@
   <p>Create a page with a button and three input boxes, labelled a, b and n</p>
   <p>When the user clicks, </p>
   <p>
-      <p>Create a function to return the sum of all the multiples of a or b below n</p>
-      <p>Call the function and alert the user to the correct answer when they press the button.</p>
+  <p>Create a function to return the sum of all the multiples of a or b below n</p>
+  <p>Call the function and alert the user to the correct answer when they press the button.</p>
   </p>
 
   <label for="a">a: </label>
@@ -35,13 +38,14 @@
 
   <button onclick="calculateAndShowSum()">Calculate Sum</button>
 
-  <h1>Exercise 4:</h1>
+  <!-- <h1>Exercise 4:</h1>
   <p>Exercise 4, Arrays: f4 should take 2 integer and 1 array parameters and return an integer.</p>
   <p>Create a function f4 to return the sum of all the multiples of a or b in array l</p>
-  <p>(Exercise 4.1) Create a page with a button and three input boxes, labelled a, b and l, l should be a large input</p>
-  <p>Call the function f4 in the function called by onClick, and alert the user to the 
-      returned answer when they press the button.</p>
- 
+  <p>(Exercise 4.1) Create a page with a button and three input boxes, labelled a, b and l, l should be a large input
+  </p>
+  <p>Call the function f4 in the function called by onClick, and alert the user to the
+    returned answer when they press the button.</p>
+
   <label for="inputA">a:</label>
   <input type="number" id="inputA"><br><br>
 
@@ -55,13 +59,14 @@
 
   <h1>Exercise 5:</h1>
   <p>Exercise 5, Arrays: f5 should take array parameters and return an integer.</p>
-  <p>Create a function f5 to return the sum of all the multiples of factors in a 
-      found in in l (a and l should be arrays of integers, a is of length 2)</p>
+  <p>Create a function f5 to return the sum of all the multiples of factors in a
+    found in in l (a and l should be arrays of integers, a is of length 2)</p>
   <p>(Exercise 5.1) Create a page with a button and two wide input boxes, labelled a and l</p>
-  <p>Call the function f5 in the function called by onClick, and alert the user to the 
-      returned answer when they press the button.</p>
+  <p>Call the function f5 in the function called by onClick, and alert the user to the
+    returned answer when they press the button.</p>
   </p>
-  <p>You may find the split function useful for creating arrays from the strings entered: <a href="https://www.w3schools.com/jsref/jsref_split.asp">Split</a></p>
+  <p>You may find the split function useful for creating arrays from the strings entered: <a
+      href="https://www.w3schools.com/jsref/jsref_split.asp">Split</a></p>
 
   <label for="inputAA">a (two numbers, comma-separated):</label><br>
   <textarea id="inputAA" rows="2" cols="50"></textarea><br><br>
@@ -73,13 +78,14 @@
 
   <h1>Exercise 6:</h1>
   <p>Exercise 6, Arrays: f6 should take array parameters and return an integer.</p>
-  <p>Create a function f6 to return the sum of all the multiples of factors in a 
-      found in in l (a and l should be arrays of integers)</p>
+  <p>Create a function f6 to return the sum of all the multiples of factors in a
+    found in in l (a and l should be arrays of integers)</p>
   <p>(Exercise 6.1) Create a page with a button and two wide input boxes, labelled a and l</p>
-  <p>Call the function f6 in the function called by onClick, and alert the user to the 
-      returned answer when they press the button.</p>
+  <p>Call the function f6 in the function called by onClick, and alert the user to the
+    returned answer when they press the button.</p>
   </p>
-  <p>You may find the split function useful for creating arrays from the strings entered: <a href="https://www.w3schools.com/jsref/jsref_split.asp">Split</a></p>
+  <p>You may find the split function useful for creating arrays from the strings entered: <a
+      href="https://www.w3schools.com/jsref/jsref_split.asp">Split</a></p>
 
   <label for="inputAAA">a (comma-separated factors):</label><br>
   <textarea id="inputAAA" rows="2" cols="50"></textarea><br><br>
@@ -87,144 +93,9 @@
   <label for="inputLLL">l (comma-separated values):</label><br>
   <textarea id="inputLLL" rows="4" cols="50"></textarea><br><br>
 
-  <button onclick="handleClick3()">Calculate Sum</button>
+  <button onclick="handleClick3()">Calculate Sum</button> -->
 
-  <script>
-    function checkBaggage() {
-      const weight = parseFloat(document.getElementById("weightInput").value);
-
-      if (isNaN(weight)) {
-        alert("Please enter a valid number.");
-        return;
-      }
-
-      if (weight > 15) {
-        alert("Baggage exceeds the 15kg allowance!");
-      } else {
-        alert("Baggage is within the allowance.");
-      }
-    }
-
-    function doIt() {
-        let sum = 0;
-        for (let i = 1; i < 1000; i++) {
-            if (i % 3 === 0 || i % 5 === 0) {
-                sum += i;
-            }
-        }
-        alert("The sum of all multiples of 3 or 5 below 1000 is: " + sum);
-    }
-
-    function sumMultiples(a, b, n) {
-        let sum = 0;
-        for (let i = 1; i < n; i++) {
-            if (i % a === 0 || i % b === 0) {
-                sum += i;
-            }
-        }
-        return sum;
-    }
-
-    function calculateAndShowSum() {
-        const a = parseInt(document.getElementById("a").value);
-        const b = parseInt(document.getElementById("b").value);
-        const n = parseInt(document.getElementById("n").value);
-
-        if (isNaN(a) || isNaN(b) || isNaN(n)) {
-            alert("Please enter valid numbers for a, b, and n.");
-            return;
-        }
-
-        const result = sumMultiples(a, b, n);
-        alert("The sum of all multiples of " + a + " or " + b + " below " + n + " is: " + result);
-    }
-
-   // Exercise 4
-   function f4(a, b, l) {
-     return l.reduce((sum, x) => {
-       if (x % a === 0 || x % b === 0) {
-         return sum + x;
-       }
-       return sum;
-     }, 0);
-   }
-   // console.log(f4(3, 5, [1, 2, 3, 4, 5, 6, 10, 15, 17]));
-
-   function handleClick() {
-      const a = parseInt(document.getElementById("inputA").value);
-      const b = parseInt(document.getElementById("inputB").value);
-      const lRaw = document.getElementById("inputL").value;
-
-      const l = lRaw
-        .split(',')
-        .map(num => parseInt(num.trim()))
-        .filter(num => !isNaN(num));
-
-      const result = f4(a, b, l);
-      alert("The sum is: " + result);
-   }
-
-   // Exercise 5
-    function f5(a, l) {
-      return l.reduce((sum, num) => {
-        return (num % a[0] === 0 || num % a[1] === 0) ? sum + num : sum;
-      }, 0);
-    }
-   
-    function handleClick2() {
-      const aRaw = document.getElementById("inputAA").value;
-      const lRaw = document.getElementById("inputLL").value;
-
-      const a = aRaw
-        .split(',')
-        .map(num => parseInt(num.trim()))
-        .filter(num => !isNaN(num));
-
-      const l = lRaw
-        .split(',')
-        .map(num => parseInt(num.trim()))
-        .filter(num => !isNaN(num));
-
-      if (a.length !== 2) {
-        alert("Please enter exactly two numbers for 'a'.");
-        return;
-      }
-
-      const result = f5(a, l);
-      alert("The sum is: " + result);
-    }
-
-   
-    // Exercise 6
-    function f6(a, l) {
-      return l.reduce((sum, num) => {
-        return a.some(factor => num % factor === 0) ? sum + num : sum;
-      }, 0);
-    }
-
-    function handleClick3() {
-      const aRaw = document.getElementById("inputAAA").value;
-      const lRaw = document.getElementById("inputLLL").value;
-
-      const a = aRaw
-        .split(',')
-        .map(n => parseInt(n.trim()))
-        .filter(n => !isNaN(n));
-
-      const l = lRaw
-        .split(',')
-        .map(n => parseInt(n.trim()))
-        .filter(n => !isNaN(n));
-
-      if (a.length === 0 || l.length === 0) {
-        alert("Please enter valid numbers in both a and l.");
-        return;
-      }
-
-      const result = f6(a, l);
-      alert("The sum is: " + result);
-    }
-
-  </script>
+  <script src="./custom.js"> </script>
 </body>
+
 </html>
